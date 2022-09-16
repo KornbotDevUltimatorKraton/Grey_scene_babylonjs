@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - [Babylon.js Viewer]  Custom scene configuration</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--
+  This examples whos how to reconfigure certain aspects of the scene, including the main color, the debug layer and the default image processing configuration.
+  The default rendering pipeline can also be configured using the default rendering pipeline lab feature.
+-->
+<babylon model="https://models.babylonjs.com/boombox.glb" templates.main.params.fill-screen="true">
+  <!-- Enable the debug layer, render when screen is in the background and disable the camera control (user cannot move the object with pointer events) -->
+  <scene debug="true" render-in-background="true" disable-camera-control="true">
+    <!-- Set the scene's main color (for both skybox and ground) -->
+    <main-color r="0.8" g="0.8" b="0.6"></main-color>
+    <!-- Enable and set the image processing configuration -->
+    <image-processing-configuration color-curves-enabled="true" exposure="10" contrast="2">
+      <!-- Examples of how to configure color curves -->
+      <color-curves global-hue="5">
+      </color-curves>
+    </image-processing-configuration>
+  </scene>
+  <lab>
+    <!-- Enable and set the default rendering pipeline -->
+    <default-rendering-pipeline grain-enabled="true" sharpen-enabled="true" glow-layer-enabled="true" bloom-enabled="true" bloom-threshold="2.0">
+    </default-rendering-pipeline>
+  </lab>
+</babylon>
+<script src="https://preview.babylonjs.com/viewer/babylon.viewer.js"></script>
+<!-- partial -->
+  
+</body>
+</html>
